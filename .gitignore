@@ -34,5 +34,6 @@ log.txt
 
 # Libreoffice leftovers (XLS)
 .~lock*
-
-
+/jsf/build/
+/jsf/gradle/
+/warp/build

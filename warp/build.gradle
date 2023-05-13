@@ -1,0 +1,28 @@
+apply plugin: 'war'
+
+group = 'org.jboss.arquillian.showcase'
+version = '1.0-SNAPSHOT'
+
+description = "Arquillian Showcase: JSF with Warp Extension"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+repositories {
+    mavenCentral()
+    maven { url "https://repository.jboss.org/nexus/content/repositories/public" }
+}
+
+dependencies {
+    implementation 'org.jboss.spec:jboss-javaee-web-6.0:2.0.0.Final'
+    testImplementation 'junit:junit:4.11'
+    testImplementation 'org.jboss.arquillian.junit:arquillian-junit-container:1.0.1.Final'
+    testImplementation 'org.jboss.shrinkwrap.descriptors:shrinkwrap-descriptors-impl-javaee:2.0.0-alpha-3'
+    testImplementation 'org.jboss.arquillian.extension:arquillian-warp-impl:1.0.0.Alpha2'
+    testImplementation 'org.jboss.arquillian.extension:arquillian-warp-jsf:1.0.0.Alpha2'
+    testImplementation 'org.jboss.arquillian.extension:arquillian-drone-webdriver-depchain:1.0.0.Final'
+
+    // this is the maven "profile" part
+    testImplementation 'org.wildfly:wildfly-arquillian-container-managed:8.1.0.Final'
+}
